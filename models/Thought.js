@@ -2,11 +2,11 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const ReactionSchema = new schema({
-    ReactionId: {
+    reactionId: {
         type: Schema.Types.ObjectId,
         default: () => new Types.ObjectId()
     },
-    ReactionBody: {
+    reactionBody: {
         type: String,
         required: true,
         trim: true,
@@ -56,6 +56,6 @@ ThoughtSchema.virtual('reactionCount').get(function(){
     return this.reactions.length;
 });
 
-const Thoughts = model("Thoughts", ThoughtSchema);
+const Thought = model("Thought", ThoughtSchema);
 
-module.exports = Thoughts;
+module.exports = Thought;
