@@ -1,0 +1,25 @@
+{
+  "name": "social-network-api-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/candiecane7/social-network-API-MongoDB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/candiecane7/social-network-API-MongoDB/issues"
+  },
+  "homepage": "https://github.com/candiecane7/social-network-API-MongoDB#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.4.1"
+  }
+}
