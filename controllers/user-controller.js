@@ -5,7 +5,7 @@ const userController = {
     getAllUsers(req, res) {
         User.find({})
         .populate({
-            path: 'Thought',
+            path: 'thoughts',
             select: '-__v'
         })
         .select('-__v')
@@ -21,7 +21,7 @@ const userController = {
     getOneUser({ params }, res) {
         User.findOne({_id: params.id })
         .populate({
-            path: 'Thought',
+            path: 'thoughts',
             select: '-__v'
         })
         .select('-__v')
@@ -89,7 +89,7 @@ const userController = {
     //delete a friend from friends list
     deleteFriend({ params }, res){
         User.findOneAndUpdate(
-            { _id: params.id },
+            { _id: params.userId },
             {$pull: { friends: params.friendId }},
             { new: true }
             )
