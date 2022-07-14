@@ -1,7 +1,8 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, SchemaTypes } = require('mongoose');
+var mongoose = require('mongoose');
 require('mongoose-type-email');
 
-//username and email, thoughts(other model) and friends(self-referencing) 
+//username and email, thought(other model) and friends(self-referencing) 
 const UserSchema = new Schema({
     username: {
         type: String,
@@ -16,7 +17,7 @@ const UserSchema = new Schema({
     thoughts: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Thoughts'
+            ref: 'Thought'
         }
     ],
     friends: [
@@ -31,7 +32,7 @@ const UserSchema = new Schema({
         virtuals: true,
         getters: true
     },
-    id: true
+    id: false
 }
 );
 
@@ -39,6 +40,6 @@ UserSchema.virtual('friendCount').get(function(){
     return this.friends.length;
 });
 
-const User = model("User", UserSchema);
+const User = model('User', UserSchema);
 
 module.exports = User;
